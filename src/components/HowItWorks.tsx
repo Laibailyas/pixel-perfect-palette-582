@@ -254,7 +254,7 @@ export function HowItWorks() {
           {STEPS.map((_, i) => (
             <span
               key={i}
-              className={`h-3 w-3 rounded-full border-2 transition-all duration-500 ${
+              className={`h-2 w-2 rounded-full border-2 md:h-3 md:w-3 transition-all duration-500 ${
                 i <= step ? "scale-110 border-flare bg-flare" : "border-flare/50 bg-transparent"
               }`}
             />
