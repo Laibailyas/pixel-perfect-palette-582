@@ -43,7 +43,7 @@ export function InstallSun({ anchorRef }: { anchorRef: RefObject<HTMLElement | n
   const textOpacity = useSpring(textTarget, { stiffness: 90, damping: 26 });
   const iconOpacity = useSpring(iconTarget, { stiffness: 80, damping: 24 });
   const textScale = useMotionValue(0.095);
-  const fontSize = useTransform([size, textScale], ([s, k]: number[]) => s * k);
+  const fontSize = useTransform([size, textScale], (vals: number[]) => (vals[0] ?? 0) * (vals[1] ?? 0));
   const zIndex = useTransform(ctaBlend, (v) => (v > 0.5 ? 3 : 40));
   const pointerEvents = useTransform(ctaBlend, (v) => (v > 0.5 ? "none" : "auto"));
 
